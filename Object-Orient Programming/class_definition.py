@@ -1,43 +1,50 @@
-class Vector:
-    """ Represent a Vector in a multidimensional space."""
+class CreditCard:
+    """A consumer credit card."""
 
-    def __init__(self, d):
-        """Create a multidimensional vector of zeros."""
-        self._coords = [0] * d
+    def __init__(self, customer, bank, account, limit):
+        """Create a new credit card instance
+            
+        The initial balance is zero.
+        customer    the name of the customer
+        bank        the name of the bank
+        account     the account identifier
+        limit       credit limit
+        """
 
-    def get_coordinates(self):
-        """return current coordinates"""
-        return self._coords
+        self._customer = customer
+        self._bank = bank
+        self._account = account
+        self._limit = limit
+        self._balance = 0
 
-    def __len__(self):
-        """return the demension of the vector."""
-        return len(self._coords)
+    def get_customer(self):
+        """Return name of the customer."""
+        return self._customer
 
-    def __getitem__(self, i):
-        """return the ith coordinate of vector"""
-        return self._coords[i]
+    def get_bank(self):
+        """Return the bank's name"""
+        return self._bank
 
-    def __setitem__(self, i, val):
-        """set the ith coordinate of vector."""
-        self._coords[i] = val
+    def get_account(self):
+        """return the card identifying number(typically stored as a string)"""
+        return self._account
 
-    def __add__(self, other):
-        """sum the two vector and return the result."""
-        if len(self) != len(other):
-            raise ValueError('dimensions must agree.')
-        result = Vector(len(self))
-        for i in range(len(self)):
-            result[i] = self[i] + other[i]
-        return result
+    def get_limit(self):
+        """Return credit card limit"""
+        return self._limit
 
-    def __eq__(self, other):
-        """return True if vector has the same coordinates as other"""
-        return self._coords == other.get_coordinates()
+    def get_balance(self):
+        """return current balance"""
+        return self._balance
 
-    def __ne__(self, other):
-        """return True if vector differs from other"""
-        return not self == other  # rely on __eq__ method.
+    def charge(self, price):
+        """return true if charge was processed, else return false"""
+        if price + self._balance > self._limit:
+            return False
+        else:
+            self._balance += price
+            return True
 
-    def __str__(self):
-        """Produce string representation of vector."""
-        return '<' + str(self._coords)[1, -1] + '>'
+    def make_payment(self, amount):
+        """process payment that reduces balance"""
+        self._balance -= amount
