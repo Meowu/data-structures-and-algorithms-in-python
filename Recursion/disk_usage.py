@@ -4,6 +4,7 @@
 import os
 
 
+# O(n)
 def disk_usage(path):
     total = os.path.getsize(path)
     if os.path.isdir(path):

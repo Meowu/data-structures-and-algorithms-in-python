@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36a7e426-eac4-4836-9b28-1aa417eae1a7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Recursion/disk_usage.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Recursion/binary_search.py" afterPath="$PROJECT_DIR$/Recursion/binary_search.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Recursion/disk_usage.py" afterPath="$PROJECT_DIR$/Recursion/disk_usage.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Recursion/draw_ruler.py" afterPath="$PROJECT_DIR$/Recursion/draw_ruler.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Recursion/factorial.py" afterPath="$PROJECT_DIR$/Recursion/factorial.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,11 +35,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="disk_usage.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="disk_usage.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Recursion/disk_usage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="12" column="16" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+            <state relative-caret-position="132">
+              <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="binary_search.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Recursion/binary_search.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="3" column="9" lean-forward="false" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="draw_ruler.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Recursion/draw_ruler.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="3" column="5" lean-forward="true" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="factorial.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Recursion/factorial.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="3" column="6" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -69,6 +102,10 @@
         <option value="$PROJECT_DIR$/../Recursion/draw_ruler.py" />
         <option value="$PROJECT_DIR$/../Recursion/binary_search.py" />
         <option value="$PROJECT_DIR$/../Recursion/disk_usage.py" />
+        <option value="$PROJECT_DIR$/Recursion/factorial.py" />
+        <option value="$PROJECT_DIR$/Recursion/draw_ruler.py" />
+        <option value="$PROJECT_DIR$/Recursion/disk_usage.py" />
+        <option value="$PROJECT_DIR$/Recursion/binary_search.py" />
       </list>
     </option>
   </component>
@@ -470,10 +507,34 @@
     <entry file="file://$PROJECT_DIR$/../Recursion/draw_ruler.py" />
     <entry file="file://$PROJECT_DIR$/../Recursion/binary_search.py" />
     <entry file="file://$PROJECT_DIR$/../Recursion/disk_usage.py" />
+    <entry file="file://$PROJECT_DIR$/Recursion/draw_ruler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="5" lean-forward="true" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Recursion/factorial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="6" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Recursion/disk_usage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="16" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+        <state relative-caret-position="132">
+          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Recursion/binary_search.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="9" lean-forward="false" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
           <folding />
         </state>
       </provider>

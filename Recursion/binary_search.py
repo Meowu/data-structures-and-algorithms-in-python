@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 
+# O(logN)
 def binary_search(data, target, low=None, high=None):
     if low is None:
         low = 0

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 
+# O(2^n)
 def draw_line(tick_length, tick_label=''):
     """Draw one line with given tick length (followed by optional label)."""
 
