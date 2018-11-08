@@ -1,5 +1,6 @@
 #!/usr/env/bin python3
 
+
 class Progression:
     """Iterator producing a generic progression.
     Default iterator produces the whole numbers 0, 1, 2...
@@ -44,7 +45,8 @@ class ArithmeticProgression(Progression):
         self._step = step
 
     def _advance(self):
-        self_current += self.step
+        self._current += self.step
+
 
 class GeometricProgression(Progression):
 
@@ -54,6 +56,7 @@ class GeometricProgression(Progression):
 
     def _advance(self):
         self._current *= self._base
+
 
 class FibonacciProgression(Progression):
 

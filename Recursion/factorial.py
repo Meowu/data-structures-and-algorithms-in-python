@@ -1,4 +1,5 @@
-#!/usr/env/bin python3
+#!/usr/bin/env python3
+
 
 def factorial(n):
     if n == 0:

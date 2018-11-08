@@ -1,6 +1,8 @@
-#!/usr/env/bin python3
+#!/usr/bin/env python3
+
 
 from abc import ABCMeta, abstractmethod
+
 
 class Sequence(metaclass=ABCMeta):
     """A version of collections.Sequence abstract base class."""
@@ -25,7 +27,7 @@ class Sequence(metaclass=ABCMeta):
         for i in range(len(self)):
             if self[i] == val:
                 return i
-        raise ValueError("val is not in sequence."""
+        raise ValueError("val is not in sequence.")
 
     def count(self, val):
         """Return the number of val in sequence."""
