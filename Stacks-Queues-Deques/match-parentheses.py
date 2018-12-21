@@ -1,5 +1,6 @@
 from .array_stack import ArrayStack
 
+
 def is_match(expr):
 
     lefty = '({['
