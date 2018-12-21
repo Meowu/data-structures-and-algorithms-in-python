@@ -33,13 +33,15 @@ class ArrayQueue:
         self._data[self._front] = None  # for gc
         self._front = (self._front+1) % len(self._data)
         self._size -= 1
+        if 0 < self._size < len(self._data) // 4:  # shrink the queue in case its size reduce to the fourth of capacity.q
+            self._resize(len(self._data) // 2)
         return answer
 
     def enqueue(self, data):
 
         if self._size == len(self._data):
             self._resize(2 * len(self._data))
-        back = (self._front + 1) % len(self._data)
+        back = (self._front + self._size) % len(self._data)
         self._data[back] = data
 
     def _resize(self, cap):
