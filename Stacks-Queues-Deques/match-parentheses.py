@@ -14,6 +14,6 @@ def is_match(expr):
         elif c in right:
             if S.is_empty():
                 return False
-            if right.index(c) != lefty.index(S.pop()): # 不能直接 return right.index(c) == lefty.index(S.pop())，匹配正确应该继续遍历。
+            if right.index(c) != lefty.index(S.pop()):  # 不能直接 return right.index(c) == lefty.index(S.pop())，匹配正确应该继续遍历。
                 return False
-    return S.is_empty() # 是否全部都匹配上。
+    return S.is_empty()  # 是否全部都匹配上。
