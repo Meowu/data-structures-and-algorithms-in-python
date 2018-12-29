@@ -21,11 +21,11 @@ class _DoublyLinkedBase(object):
             self._prev = prev
 
         @property
-        def prev_element(self):
+        def prev_node(self):
             return self._prev
 
         @property
-        def next_element(self):
+        def next_node(self):
             return self._next
 
         @property
@@ -57,8 +57,8 @@ class _DoublyLinkedBase(object):
         return newest
 
     def _delete_node(self, node):
-        predecessor = node.prev_element
-        successor = node.next_element
+        predecessor = node.prev_node
+        successor = node.next_node
         predecessor._next = successor
         successor._prev = predecessor
         element = node.element
@@ -66,3 +66,31 @@ class _DoublyLinkedBase(object):
         self._size -= 1
         return element
 
+
+class LinkedDeque(_DoublyLinkedBase):
+
+    def first(self):
+        if self.is_empty():
+            raise Empty('Deque is empty')
+        return self._header.next_node.element
+
+    def last(self):
+        if self.is_empty():
+            raise Empty('Deque is empty.')
+        return self._tail.prev_node.element
+
+    def insert_first(self, el):
+        self._insert_between(el, self._header, self._header.next_node)
+
+    def insert_last(self, el):
+        self._insert_between(el, self._tail.next_node, self._tail)
+
+    def delete_first(self):
+        if self.is_empty():
+            raise Empty('Deque is empty.')
+        self._delete_node(self._header.next_node)
+
+    def delete_last(self):
+        if self.is_empty():
+            raise Empty('Deque is empty')
+        self._delete_node(self._tail.prev_node)
