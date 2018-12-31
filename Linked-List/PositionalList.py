@@ -12,6 +12,7 @@ class PositionalList(_DoublyLinkedBase):
             self._container = container
             self._node = node
 
+        @property
         def element(self):
             return self._node.element
 
