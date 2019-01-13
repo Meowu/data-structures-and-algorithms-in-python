@@ -46,3 +46,14 @@ class Tree(object):
 
     def _height1(self):
         return max(self.depth(p) for p in self.positions() if self.is_root(p))  # O(n^2) in worst-case time
+
+    def _height2(self, p):
+        if self.is_leaf(p):
+            return 0
+        else:
+            return 1 + max(self._height2(c) for c in self.children(p))
+
+    def height(self, p=None):
+        if p is None:
+            p = self.root()
+        return self._height2(p)
