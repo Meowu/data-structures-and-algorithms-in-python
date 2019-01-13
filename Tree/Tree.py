@@ -26,6 +26,9 @@ class Tree(object):
     def __len__(self):
         raise NotImplementedError('must be implemented by subclass ')
 
+    def positions(self):
+        raise NotImplementedError('must be implemented by subclass ')
+
     def is_root(self, p):
         return self.root() == p
 
@@ -34,3 +37,12 @@ class Tree(object):
 
     def is_empty(self):
         return len(self) == 0
+
+    def depth(self, p):
+        if self.is_root(p):
+            return 0
+        else:
+            return 1 + self.depth(self.parent(p))
+
+    def _height1(self):
+        return max(self.depth(p) for p in self.positions() if self.is_root(p))  # O(n^2) in worst-case time
