@@ -73,6 +73,7 @@ class Tree(object):
         """
         If p is a leaf, then the height of p is 0, else the height of p is one more than 
         the maximum of the heights of p’s children.
+        This implementation is more efficient than self._height1.
         :return: 
         """
         if self.is_leaf(p):
@@ -81,6 +82,11 @@ class Tree(object):
             return 1 + max(self._height2(c) for c in self.children(p))
 
     def height(self, p=None):
+        """
+        # 一个通用的计算任意节点的高度。
+        :param p: 
+        :return: 
+        """
         if p is None:
             p = self.root()
         return self._height2(p)
