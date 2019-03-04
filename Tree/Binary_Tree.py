@@ -37,3 +37,12 @@ class BinaryTree(Tree):
             yield self.left(p)
         if self.right(p) is not None:
             yield self.right(p)
+
+    def _subtree_inorder(self, p):
+        if self.left(p) is not None:
+            for c in self._subtree_inorder(self.left(p)):
+                yield c
+        yield p
+        if self.right(p) is not None:
+            for r in self._subtree_inorder(self.right(p)):
+                yield r
