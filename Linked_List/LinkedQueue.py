@@ -6,7 +6,7 @@ class Empty(Exception):
     pass
 
 
-class LinkQueue(object):
+class LinkedQueue(object):
 
     class _Node(object):
 

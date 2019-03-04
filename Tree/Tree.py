@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from ..Linked_List.LinkedQueue import LinkedQueue
 
 
 class Tree(object):
@@ -38,6 +39,16 @@ class Tree(object):
     def __iter__(self):
         for p in self.positions():
             yield p.element()
+
+    def bread_first(self):
+        if not self.is_empty():
+            queue = LinkedQueue()
+            queue.enqueue(self.root())
+            while not queue.is_empty():
+                p = queue.dequeue()
+                yield p
+                for c in p.children(p):
+                    queue.enqueue(c)
 
     def positions(self):
         """
