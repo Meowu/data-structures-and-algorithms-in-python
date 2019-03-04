@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+
 class Tree(object):
     """
     Tree ADT.
@@ -34,12 +35,39 @@ class Tree(object):
     def __len__(self):
         raise NotImplementedError('must be implemented by subclass ')
 
+    def __iter__(self):
+        for p in self.positions():
+            yield p.element()
+
     def positions(self):
         """
         Generate an iteration of all positions of tree T.
         :return: 
         """
-        raise NotImplementedError('must be implemented by subclass ')
+        # raise NotImplementedError('must be implemented by subclass ')
+        return self.pre_order()
+
+    def _subtree_pre_order(self, p):
+        yield p
+        for child in self.children(p):
+            for other in self._subtree_pre_order(child):
+                yield other
+
+    def pre_order(self):
+        if not self.is_empty():
+            for p in self._subtree_pre_order(self.root()):
+                yield p
+
+    def _subtree_post_order(self, p):
+        for c in p.children():
+            for n in self._subtree_post_order(c):
+                yield n
+        yield p
+
+    def post_order(self):
+        if not self.is_empty():
+            for p in self._subtree_post_order(self.root()):
+                yield p
 
     def is_root(self, p):
         return self.root() == p
@@ -73,7 +101,7 @@ class Tree(object):
         """
         If p is a leaf, then the height of p is 0, else the height of p is one more than 
         the maximum of the heights of p’s children.
-        This implementation is more efficient than self._height1.
+        This implementation is more efficient than self._height1.O(n)
         :return: 
         """
         if self.is_leaf(p):
