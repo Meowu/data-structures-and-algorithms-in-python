@@ -109,11 +109,11 @@ class LinkedBinaryTree(BinaryTree):
 
     def left(self, p):
         node = self._validate(p)
-        return self._make_position(node)
+        return self._make_position(node.left)
 
     def right(self, p):
         node = self._validate(p)
-        return self._make_position(node)
+        return self._make_position(node.right)
 
     def num_children(self, p):
         node = self._validate(p)
