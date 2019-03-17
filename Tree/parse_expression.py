@@ -1,8 +1,8 @@
 from .BinaryTree import BinaryTree
 
 
-def parse_expr(exp):
-    n = exp
+def parse_expr(expr):
+    n = expr
     stacks = []
     current = BinaryTree(None)
     for i in n:
@@ -12,18 +12,39 @@ def parse_expr(exp):
             stacks.append(parent)
             current = current.getLeft()
         elif i.isdigit():
+            print('current', i)
             current.setRoot(int(i))
+            c = current
             current = stacks.pop()
         elif i in ['+', '-', '*', '/']:
-            current.setRoot(i)
-            current.insertRight(None)
-            stacks.append(current)
-            current = current.getRight()
+            if current.getRoot():
+                t = BinaryTree(i)
+                t.insertRight(None)
+                t.left = current
+                if len(stacks):
+                    p = stacks[-1]
+                    if p.left == current:
+                        p.left = t
+                    else:
+                        p.right = t
+                    stacks.append(t)
+                    current = t.getRight()
+                else:
+                    t.left = current
+                    stacks.append(t)
+                    current = t.getRight()
+            else:
+                current.setRoot(i)
+                current.insertRight(None)
+                stacks.append(current)
+                current = current.getRight()
         elif i == ')':
             if len(stacks):
                 current = stacks.pop()
             else:
                 print('finished.')
+        else:
+            raise ValueError
     return current, stacks
 
 
