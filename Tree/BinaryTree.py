@@ -1,5 +1,7 @@
 class BinaryTree(object):
-
+    """
+    todo: support attach a sub tree.
+    """
     def __init__(self, val):
         self.root = val
         self.left = None
