@@ -19,7 +19,7 @@ class PriorityQueueBase(object):
             return self._value
 
         def __lt__(self, other):
-            return self._key < other.key
+            return self.key < other.key
 
     def is_empty(self):
         return len(self) == 0
