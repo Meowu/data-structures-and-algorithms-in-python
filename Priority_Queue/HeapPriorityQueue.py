@@ -42,7 +42,7 @@ class HeapPriorityQueue(PriorityQueueBase):
     def _up_heap(self, j):
         parent = self._parent(j)
         if j > 0 and self.data[parent] > self.data[j]:
-            self._swap(j, parent)
+            self._swap(j, parent)  # 如果子类覆盖了超类的 _swap 方法，在子类中调用 _up_heap 的时候执行的是超类还是子类的 _swap 方法？
             self._up_heap(parent)
 
     def _down_heap(self, j):
