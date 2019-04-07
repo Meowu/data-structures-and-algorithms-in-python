@@ -2,7 +2,7 @@ from Linked_List.DoublyLinkedList import Empty
 from Priority_Queue.PriorityQueueBase import PriorityQueueBase
 
 
-class HeapPriority(PriorityQueueBase):
+class HeapPriorityQueue(PriorityQueueBase):
 
     def __init__(self, contents=()):
         self._data = [self._Item(k, v) for k, v in contents]
@@ -78,7 +78,7 @@ class HeapPriority(PriorityQueueBase):
 
 
 if __name__ == '__main__':
-    h_queue = HeapPriority()
+    h_queue = HeapPriorityQueue()
     assert h_queue.is_empty() is True, 'Initialize a empty queue.'
     h_queue.add(2, 'Two')
     h_queue.add(3, 'Three')
