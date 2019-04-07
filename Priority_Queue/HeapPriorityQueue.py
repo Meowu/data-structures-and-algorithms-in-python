@@ -4,8 +4,10 @@ from Priority_Queue.PriorityQueueBase import PriorityQueueBase
 
 class HeapPriority(PriorityQueueBase):
 
-    def __init__(self):
-        self._data = []
+    def __init__(self, contents=()):
+        self._data = [self._Item(k, v) for k, v in contents]
+        if len(self) > 1:
+            self._heapify()
 
     def __len__(self):
         return len(self.data)
@@ -13,6 +15,11 @@ class HeapPriority(PriorityQueueBase):
     @property
     def data(self):
         return self._data
+
+    def _heapify(self):
+        start = self._parent(len(self) - 1)  # 最底层执行 down heap 没意义，从次底层开始。
+        for j in range(start, -1, -1):
+            self._down_heap(j)
 
     def _parent(self, j):
         return (j - 1) // 2
