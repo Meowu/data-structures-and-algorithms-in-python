@@ -1,5 +1,5 @@
 from Linked_List.DoublyLinkedList import Empty
-from .PriorityQueueBase import PriorityQueueBase
+from Priority_Queue.PriorityQueueBase import PriorityQueueBase
 
 
 class HeapPriority(PriorityQueueBase):
@@ -79,3 +79,4 @@ if __name__ == '__main__':
     assert h_queue.min()[1] == 'Two', 'the first item with value `Two`'
     h_queue.add(1, 'One')
     assert h_queue.min()[0] == 1, 'now the first item with key 1'
+    print('Tests ok.')
