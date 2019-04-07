@@ -14,9 +14,17 @@ class PriorityQueueBase(object):
         def key(self):
             return self._key
 
+        @key.setter
+        def key(self, k):
+            self._key = k
+
         @property
         def value(self):
             return self._value
+
+        @value.setter
+        def value(self, v):
+            self._value = v
 
         def __lt__(self, other):
             return self.key < other.key
