@@ -1,5 +1,7 @@
 from MapsAndDictionaries.UnsortedMap import MapBase
 from random import randrange
+from abc import abstractmethod
+
 
 class HashMapBase(MapBase):
 
@@ -15,6 +17,18 @@ class HashMapBase(MapBase):
 
     def __len__(self):
         return self._n
+
+    @abstractmethod
+    def _bucket_getitem(self, j, k):
+        raise NotImplementedError
+
+    @abstractmethod
+    def _bucket_setitem(self, key, value):
+        raise NotImplementedError
+
+    @abstractmethod
+    def _bucket_delitem(self, j, k):
+        raise NotImplementedError
 
     def __getitem__(self, k):
         j = self._hash_function(k)
