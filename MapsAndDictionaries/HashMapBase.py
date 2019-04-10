@@ -23,7 +23,7 @@ class HashMapBase(MapBase):
         raise NotImplementedError
 
     @abstractmethod
-    def _bucket_setitem(self, key, value):
+    def _bucket_setitem(self, j, key, value):
         raise NotImplementedError
 
     @abstractmethod
