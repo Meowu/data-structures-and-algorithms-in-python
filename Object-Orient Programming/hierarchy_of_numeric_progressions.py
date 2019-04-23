@@ -45,7 +45,7 @@ class ArithmeticProgression(Progression):
         self._step = step
 
     def _advance(self):
-        self._current += self.step
+        self._current += self._step
 
 
 class GeometricProgression(Progression):
